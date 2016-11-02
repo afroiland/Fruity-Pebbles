@@ -3,6 +3,9 @@ function randomNumber(min, max){
 }
 
 $(document).ready(function(){
+	var totalAvailableCash = 20;
+	$('h1').append('<h1><span></span>' + totalAvailableCash + '</h1>');
+
 	$('#fruits').append('<div id="apples"></div>');
 	$('#fruits').append('<div id="oranges"></div>');
 	$('#fruits').append('<div id="bananas"></div>');
@@ -42,5 +45,7 @@ var grapes = {
 var fruits = [apples, oranges, bananas, grapes];
 apples.price=5;
 console.log(fruits);
+
+
 
 });
