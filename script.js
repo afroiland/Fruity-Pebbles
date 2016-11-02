@@ -7,22 +7,22 @@ $(document).ready(function(){
 
 	var apples = {
 		name:"Apples",
-		price:0
+		price:1
 	};
 
 	var oranges = {
 		name:"Oranges",
-		price:0
+		price:2
 	};
 
 	var bananas = {
 		name:"Bananas",
-		price:0
+		price:3
 	};
 
 	var grapes = {
 		name:"Grapes",
-		price:0
+		price:4
 	};
 
 	var fruits = [apples, oranges, bananas, grapes];
@@ -41,10 +41,10 @@ $(document).ready(function(){
 	$('#bananas').append('<img src="fruit-pics/bananas.jpg" alt="banana">');
 	$('#grapes').append('<img src="fruit-pics/grapes.png" alt="grapes">');
 
-	$('#fruitPrice').append('<p id="applePrice">"Price: "'+ apples.price +'</p>');
-	$('#fruitPrice').append('<p id="orangePrice">"Price: "</p>');
-	$('#fruitPrice').append('<p id="bananaPrice">"Price: "</p>');
-	$('#fruitPrice').append('<p id="grapesPrice">"Price: "</p>');
+	$('#fruitPrice').append('<p id="applePrice">Price: '+apples.price+'</p>');
+	$('#fruitPrice').append('<p id="orangePrice">Price: '+oranges.price+'</p>');
+	$('#fruitPrice').append('<p id="bananaPrice">Price: '+bananas.price+'</p>');
+	$('#fruitPrice').append('<p id="grapesPrice">Price: '+grapes.price+'</p>');
 
 
 
