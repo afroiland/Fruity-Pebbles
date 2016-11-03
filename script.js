@@ -3,7 +3,7 @@ function randomNumber(min, max){
 }
 
 $(document).ready(function(){
-	var totalAvailableCash = 20;
+	var totalAvailableCash = 100;
 
 	var apples = {
 		name:"apple",
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			//console.log(fruits[i].name);
 			var test = (fruits[i].name);
 			//var tmpNum = fruits[i].price;
-			$('#'+test+"Price").text((fruits[i].price).toFixed(2));
+			$('#'+test+"Price").text("Price: $" + (fruits[i].price).toFixed(2));
 
 			//console.log(test);
 
@@ -63,33 +63,46 @@ $(document).ready(function(){
 	}
 
 
+
+
 	//intervalChange();
 
 	// changePrice(apples);
 	// console.log(apples.price);
 
-	$('h1').append('<h1><span></span>' + totalAvailableCash + '</h1>');
+	$('h1').append('<h1><span id="totalCash"> $' + totalAvailableCash + '</span></h1>');
 
 	$('#fruits').append('<div id="apples"></div>');
 	$('#fruits').append('<div id="oranges"></div>');
 	$('#fruits').append('<div id="bananas"></div>');
 	$('#fruits').append('<div id="pears"></div>');
 
-	$('#apples').append('<img src="fruit-pics/apple.jpg" alt="apple">');
-	$('#oranges').append('<img src="fruit-pics/oranges.jpg" alt="orange">');
-	$('#bananas').append('<img src="fruit-pics/bananas.jpg" alt="banana">');
-	$('#pears').append('<img src="fruit-pics/pears.jpg" alt="pears">');
+	$('#apples').append('<img src="fruit-pics/apple.png" alt="apple">');
+	$('#oranges').append('<img src="fruit-pics/orange.png" alt="orange">');
+	$('#bananas').append('<img src="fruit-pics/bananas.png" alt="banana">');
+	$('#pears').append('<img src="fruit-pics/pear.png" alt="pears">');
+
+	$('#apples').append('<button id="buyApples">Buy</button>');
+	$('#oranges').append('<button id="buyOranges">Buy</button>');
+	$('#bananas').append('<button id="buyBananas">Buy</button>');
+	$('#pears').append('<button id="buyPears">Buy</button>');
 
 	$('#apples').append('<p id="applePrice">Price: $' + (apples.price).toFixed(2) + '</p>');
 	$('#oranges').append('<p id="orangePrice">Price: $' + (oranges.price).toFixed(2) + '</p>');
 	$('#bananas').append('<p id="bananaPrice">Price: $' + (bananas.price).toFixed(2) + '</p>');
 	$('#pears').append('<p id="pearPrice">Price: $' + (pears.price).toFixed(2) + '</p>');
 
+	$('#buyApples').on('click', buy);
 
-	// $('#applePrice').append('<button id="buyApples">Buy</button>');
-	// $('#orangePrice').append('<button id="buyOranges">Buy</button>');
-	// $('#bananaPrice').append('<button id="buyBananas">Buy</button>');
-	// $('#pearsPrice').append('<button id="buyPears">Buy</button>');
+	function buy() {
+		totalAvailableCash -= (apples.price).toFixed(2);
+		if(totalAvailableCash < 0) {
+			totalAvailableCash = 0;
+		}
+		$('#totalCash').text("$" + totalAvailableCash.toFixed(2));
+	}
+
+
 
 	 setInterval(intervalChange, 1000);
 	 //intervalChange();

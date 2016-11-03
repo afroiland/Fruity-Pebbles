@@ -17,6 +17,11 @@ img {
 //  float:left;
 }
 
-#applePrice, #orangePrice, #bananaPrice, #pearsPrice {
+#applePrice, #orangePrice, #bananaPrice, #pearPrice {
   text-align: center;
+}
+
+#buyApples, #buyOranges, #buyBananas, #buyPears {
+  margin: auto 0;
+
 }
