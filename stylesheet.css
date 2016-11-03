@@ -7,7 +7,7 @@ img {
   display: inline-block;
 }
 
-#apples, #oranges, #bananas, #grapes {
+#apples, #oranges, #bananas, #pears {
   display: inline-block;
 }
 
@@ -15,4 +15,8 @@ img {
 #fruitPrice {
   display: inline-flex;
 //  float:left;
+}
+
+#applePrice, #orangePrice, #bananaPrice, #pearsPrice {
+  text-align: center;
 }
